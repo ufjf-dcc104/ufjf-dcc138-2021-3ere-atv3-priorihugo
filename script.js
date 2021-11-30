@@ -17,13 +17,13 @@ let personagem = {
     x: 80,
     y: 80,
     POSES: [
-        { posicao: 0, nFrames: 4, vFrame:2 },
-        { posicao: 1, nFrames: 4, vFrame:2 },
-        { posicao: 2, nFrames: 3, vFrame:2 },
-        { posicao: 3, nFrames: 4, vFrame:2 },
-        { posicao: 6, nFrames: 5, vFrame:2 },
-        { posicao: 7, nFrames: 5, vFrame:2 },
-        { posicao: 8, nFrames: 7, vFrame:2 },  
+        { posicao: 0, nFrames: 4, vFrame:7 },
+        { posicao: 1, nFrames: 4, vFrame:7 },
+        { posicao: 2, nFrames: 3, vFrame:7 },
+        { posicao: 3, nFrames: 4, vFrame:7 },
+        { posicao: 6, nFrames: 5, vFrame:7 },
+        { posicao: 7, nFrames: 5, vFrame:7 },
+        { posicao: 8, nFrames: 7, vFrame:7 },  
     ],
     desenha(){
 
@@ -53,6 +53,7 @@ function loop(t){
     dt = (t - t0)/1000;
 
     personagem.desenha();
+    quadro = (quadro > personagem.POSES[acao].nFrames)? quadro = 0 : quadro + personagem.POSES[acao].vFrame*dt;
     
     requestAnimationFrame(loop);
     t0 = t;
