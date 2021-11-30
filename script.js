@@ -11,7 +11,7 @@ ken.src = "assets\\ken.png";
 const larguraImagem = 70;
 const alturaImagem = 80;
 
-let acao , quadro;
+let acao = 0 , quadro = 0;
 
 let personagem = {
     x: 80,
@@ -45,3 +45,15 @@ let personagem = {
     }
 }
 
+let t0 , dt;
+
+requestAnimationFrame(loop);
+function loop(t){
+    t0 = t0 ?? t;
+    dt = (t - t0)/1000;
+
+    personagem.desenha();
+    
+    requestAnimationFrame(loop);
+    t0 = t;
+}
