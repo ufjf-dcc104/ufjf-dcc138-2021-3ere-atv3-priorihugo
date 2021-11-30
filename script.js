@@ -11,6 +11,8 @@ ken.src = "assets\\ken.png";
 const larguraImagem = 70;
 const alturaImagem = 80;
 
+let acao , quadro;
+
 let personagem = {
     x: 80,
     y: 80,
@@ -23,4 +25,23 @@ let personagem = {
         { posicao: 7, nFrames: 5, vFrame:2 },
         { posicao: 8, nFrames: 7, vFrame:2 },  
     ],
+    desenha(){
+
+        ctx.clearRect(0 , 0 , canvas.width , canvas.height);
+        ctx.drawImage(
+            ken,///source
+            ///posicao na sprite sheet
+            larguraImagem*Math.floor(quadro), //sx
+            alturaImagem*personagem.POSES[acao].posicao,
+            larguraImagem,
+            alturaImagem,
+            ///posicao na tela;
+            personagem.x,
+            personagem.y,
+            larguraImagem,
+            alturaImagem   
+        );
+
+    }
 }
+
