@@ -10,3 +10,17 @@ ken.src = "assets\\ken.png";
 
 const larguraImagem = 70;
 const alturaImagem = 80;
+
+let personagem = {
+    x: 80,
+    y: 80,
+    POSES: [
+        { posicao: 0, nFrames: 4, vFrame:2 },
+        { posicao: 1, nFrames: 4, vFrame:2 },
+        { posicao: 2, nFrames: 3, vFrame:2 },
+        { posicao: 3, nFrames: 4, vFrame:2 },
+        { posicao: 6, nFrames: 5, vFrame:2 },
+        { posicao: 7, nFrames: 5, vFrame:2 },
+        { posicao: 8, nFrames: 7, vFrame:2 },  
+    ],
+}
