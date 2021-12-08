@@ -25,8 +25,6 @@ punch2.scr = "assets\\punch2_strip6.png";
 const uppercut = new Image();
 uppercut.scr = "assets\\uppercut_strip6.png";
 
-const larguraImagem = 70;
-const alturaImagem = 80;
 
 let acao = 0 , quadro = 0;
 
@@ -34,13 +32,14 @@ let personagem = {
     x: 80,
     y: 80,
     POSES: [
-        { posicao: 0, nFrames: 4, vFrame:7 },
-        { posicao: 1, nFrames: 4, vFrame:7 },
-        { posicao: 2, nFrames: 3, vFrame:4 },
-        { posicao: 3, nFrames: 4, vFrame:7 },
-        { posicao: 6, nFrames: 5, vFrame:4 },
-        { posicao: 7, nFrames: 5, vFrame:7 },
-        { posicao: 8, nFrames: 7, vFrame:7 },  
+        { img: idle, largura: 75, nFrames: 9, vFrame:7 },
+        { img: idle2, largura: 73, nFrames: 6, vFrame:7 },
+        { img: kick, largura: 123, nFrames: 3, vFrame:4 },
+        { img: kick2, largura: 114, nFrames: 6, vFrame:7 },
+        { img: punch, largura: 112, nFrames: 2, vFrame:4 },
+        { img: punch2, largura: 114, nFrames: 6, vFrame:7 },
+        { img: uppercut, largura: 83, nFrames: 6, vFrame:7 },
+        { img: haduken,  largura: 149, nFrames: 10, vFrame:7 }  
     ],
     desenha(){
 
