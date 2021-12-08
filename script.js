@@ -7,6 +7,14 @@ const ctx = canvas.getContext("2d");
 canvas.width = 400;
 canvas.height = 400;
 
+document.addEventListener("keydown" , (e)=>{
+
+    if(e.key === " "){
+        quadro = 0; 
+        acao = (acao + 1)%8;
+        console.log(acao);
+    }
+})
 
 const haduken = new Image();
 haduken.src = "assets\\haduken_strip10.png";
@@ -53,7 +61,7 @@ let personagem = {
             personagem.POSES[acao].img.height,
             ///posicao na tela;
             personagem.x,
-            personagem.y,
+            canvas.height - personagem.POSES[acao].img.height - 20,
             personagem.POSES[acao].largura,
             personagem.POSES[acao].img.height   
         );
@@ -69,7 +77,7 @@ function loop(t){
     dt = (t - t0)/1000;
 
     personagem.desenha();
-    quadro = (quadro >= personagem.POSES[acao].nFrames)? quadro = 0 : quadro + personagem.POSES[acao].vFrame*dt;
+    quadro = (quadro > personagem.POSES[acao].nFrames)? quadro = 0 : quadro + personagem.POSES[acao].vFrame*dt;
     
     
     requestAnimationFrame(loop);
