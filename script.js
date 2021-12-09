@@ -39,7 +39,7 @@ let personagem = {
   y: 80,
   POSES: [
     { img: idle, largura: 75, nFrames: 9, vFrame: 9 },
-    { img: idle2, largura: 73, nFrames: 6, vFrame: 6 },
+    { img: idle2, largura: 71, nFrames: 6, vFrame: 6 },
     { img: kick, largura: 123, nFrames: 3, vFrame: 3 },
     { img: kick2, largura: 114, nFrames: 6, vFrame: 6 },
     { img: punch, largura: 112, nFrames: 2, vFrame: 2 },
