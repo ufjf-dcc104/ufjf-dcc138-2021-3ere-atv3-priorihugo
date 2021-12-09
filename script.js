@@ -12,7 +12,6 @@ document.addEventListener("keydown" , (e)=>{
     if(e.key === " "){
         quadro = 0; 
         acao = (acao + 1)%8;
-        console.log(acao);
     }
 })
 
@@ -77,7 +76,8 @@ function loop(t){
     dt = (t - t0)/1000;
 
     personagem.desenha();
-    quadro = (quadro > personagem.POSES[acao].nFrames)? quadro = 0 : quadro + personagem.POSES[acao].vFrame*dt;
+    ///esse 0.2 é uma gambiarra pra animação não flickar
+    quadro = (quadro >= personagem.POSES[acao].nFrames - 0.2)? quadro = 0 : quadro + personagem.POSES[acao].vFrame*dt;
     
     
     requestAnimationFrame(loop);
